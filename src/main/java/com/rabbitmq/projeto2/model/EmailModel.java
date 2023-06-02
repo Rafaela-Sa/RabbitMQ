@@ -18,12 +18,18 @@ public class EmailModel implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private UUID emailId;
-    private String ownerRef;
     private String emailFrom;
     private String emailTo;
-    private String subject;
-    @Column(columnDefinition = "TEXT")
+    private String subject; //Título
+    @Column(columnDefinition = "TEXT") //Notação possibilita utilizar textos grandes no corpo do email
     private String text;
     private LocalDateTime sendDateEmail;
-    private StatusEmail statusEmail;
+    private StatusEmail statusEmail; //Status importado do Enum: SENT, ERROR
+
+    @ManyToOne
+    private UserModel userModel; // userModel é o nome do campo da tabela que será mapeada como "dona" da relação
+
+//    public EmailModel(UserModel userEmail) {
+//        this.emailFrom = userEmail;
+//    }
 }

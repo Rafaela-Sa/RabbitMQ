@@ -2,6 +2,7 @@ package com.rabbitmq.projeto2.controller;
 
 import com.rabbitmq.projeto2.dto.EmailDto;
 import com.rabbitmq.projeto2.model.EmailModel;
+import com.rabbitmq.projeto2.model.UserModel;
 import com.rabbitmq.projeto2.service.EmailService;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
@@ -17,7 +18,6 @@ public class EmailController {
 
     @Autowired
     EmailService emailService;
-
     @PostMapping("/sending-email")
     public ResponseEntity<EmailModel> sendingEmail(@RequestBody @Valid EmailDto emailDto) {
         EmailModel emailModel = new EmailModel();

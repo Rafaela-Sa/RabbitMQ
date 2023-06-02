@@ -2,6 +2,7 @@ package com.rabbitmq.projeto2.service;
 
 import com.rabbitmq.projeto2.enums.StatusEmail;
 import com.rabbitmq.projeto2.model.EmailModel;
+import com.rabbitmq.projeto2.model.UserModel;
 import com.rabbitmq.projeto2.repositories.EmailRepository;
 import jakarta.validation.constraints.Email;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 public class EmailService {
 
     @Autowired
-    EmailRepository emailRepository;
+    private EmailRepository emailRepository;
 
     @Autowired
     private JavaMailSender emailSender;

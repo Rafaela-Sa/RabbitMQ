@@ -8,8 +8,6 @@ import lombok.Data;
 public class EmailDto {
 
     @NotBlank
-    private String ownerRef;
-    @NotBlank
     @Email
     private String emailFrom;
     @NotBlank
